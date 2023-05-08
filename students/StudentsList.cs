@@ -14,7 +14,9 @@ namespace System_College_of_Communication.students
 {
     public partial class StudentsList : Form
     {
-
+        //
+        //  students.StudentsUpdate std_upd;
+        //
         private SqlConnection sqlConnection = null;
 
         public StudentsList()
@@ -64,6 +66,8 @@ namespace System_College_of_Communication.students
             if(e.ColumnIndex == 1)
             {
                 //Edit
+                students.StudentsUpdate stdUpdate = new students.StudentsUpdate(this);
+                stdUpdate.Show();
             }
             if(e.ColumnIndex == 2)
             {

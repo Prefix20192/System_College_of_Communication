@@ -8,12 +8,47 @@
 
 ### Данное приложение было разработано с целью упрощение введение контроля/учета и прочего в учебном учереждение.
 ---
-# Обновление
+# Таблицы
 
-- ### Релиз (`beta`)
-- ### Создание форм 
-- ### Сделан CRUD для студентов 
----
+<center>Таблица - <span style="color:white;">Students_Info<span></center>
+
+<br>
+<center>
+
+| FIO | GROUP | PASSPORT | BIRTHDAY | PHONE | Education | ADDRESS_IN_STAV | ADDRESS_IN_PASSORT |
+|    :---:     |     :---:      |     :---:     |     :---:     |     :---:      |     :---:     |     :---:      |     :---:     |
+|    Картавый Никита Витальевич     |     ГПР-506      |     45456987     |     24.05.3021     |     +79645892132      |     Полное Высшее     |     Ул.Кукуева дом Колатуева      |     Улица Памара Дом 53     |
+
+
+</center>
+
+<br>
+
+<center>Таблица - <span style="color:white;">Additional information For Student<span></center>
+
+<br>
+<center>
+
+| family status | Accounting for ОДН | 
+|    :---:     |     :---:      | 
+|   Полная    |     Нет     |  
+
+
+</center>
+<br>
+
+<center>Таблица - <span style="color:white;">Information about parents<span></center>
+
+<br>
+<center>
+
+| FIO mom | FIO Father | PHONE MOM | PHONE Father | ADDRESS | nationality | 
+|    :---:     |     :---:      |     :---:     |     :---:     |     :---:      |     :---:     |     
+|    Картавая Ина Ина     |    Картавый Никита Витальевич      |     +79684231212     |     +79683231212     |     Ул.Кукуева дом Колатуева      |     Русские     |    
+
+
+</center>
+
 # Автор
 
 ### `Pr[E]fix` aka `Nikita`
