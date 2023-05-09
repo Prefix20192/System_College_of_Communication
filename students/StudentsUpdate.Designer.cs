@@ -63,15 +63,15 @@ namespace System_College_of_Communication.students
             this.label27 = new System.Windows.Forms.Label();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox26 = new System.Windows.Forms.TextBox();
+            this.nationalnost = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox27 = new System.Windows.Forms.TextBox();
+            this.txt2 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
             this.txt_address_in_stav = new System.Windows.Forms.TextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox29 = new System.Windows.Forms.TextBox();
+            this.txt_odn = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.textBox30 = new System.Windows.Forms.TextBox();
+            this.txt_family_status = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtEducation_stud = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
@@ -92,12 +92,13 @@ namespace System_College_of_Communication.students
             // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(363, 356);
+            this.btnUpdate.Location = new System.Drawing.Point(364, 295);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(96, 23);
             this.btnUpdate.TabIndex = 0;
             this.btnUpdate.Text = "Обновить";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // menuStrip1
             // 
@@ -126,19 +127,20 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem,
             this.экспортToolStripMenuItem});
             this.экспортExeclToolStripMenuItem.Name = "экспортExeclToolStripMenuItem";
-            this.экспортExeclToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.экспортExeclToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.экспортExeclToolStripMenuItem.Text = "Execl";
             // 
             // импортToolStripMenuItem
             // 
             this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
-            this.импортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.импортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.импортToolStripMenuItem.Text = "Импорт";
+            this.импортToolStripMenuItem.Click += new System.EventHandler(this.импортToolStripMenuItem_Click);
             // 
             // экспортToolStripMenuItem
             // 
             this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.экспортToolStripMenuItem.Text = "Экспорт";
             // 
             // имяпортToolStripMenuItem
@@ -147,7 +149,7 @@ namespace System_College_of_Communication.students
             this.импротToolStripMenuItem,
             this.экспортToolStripMenuItem1});
             this.имяпортToolStripMenuItem.Name = "имяпортToolStripMenuItem";
-            this.имяпортToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.имяпортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.имяпортToolStripMenuItem.Text = "Word";
             // 
             // импротToolStripMenuItem
@@ -168,7 +170,7 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem1,
             this.экспортToolStripMenuItem2});
             this.acessToolStripMenuItem.Name = "acessToolStripMenuItem";
-            this.acessToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.acessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.acessToolStripMenuItem.Text = "Access";
             // 
             // импортToolStripMenuItem1
@@ -189,7 +191,7 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem2,
             this.экспортToolStripMenuItem3});
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.tXTToolStripMenuItem.Text = "TXT";
             // 
             // импортToolStripMenuItem2
@@ -206,7 +208,7 @@ namespace System_College_of_Communication.students
             // 
             // btnNewlable_and_btn
             // 
-            this.btnNewlable_and_btn.Location = new System.Drawing.Point(465, 356);
+            this.btnNewlable_and_btn.Location = new System.Drawing.Point(466, 295);
             this.btnNewlable_and_btn.Name = "btnNewlable_and_btn";
             this.btnNewlable_and_btn.Size = new System.Drawing.Size(28, 23);
             this.btnNewlable_and_btn.TabIndex = 2;
@@ -218,7 +220,7 @@ namespace System_College_of_Communication.students
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label19.Location = new System.Drawing.Point(60, 33);
+            this.label19.Location = new System.Drawing.Point(66, 4);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(285, 29);
             this.label19.TabIndex = 39;
@@ -228,7 +230,7 @@ namespace System_College_of_Communication.students
             // 
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label20.Location = new System.Drawing.Point(454, 42);
+            this.label20.Location = new System.Drawing.Point(460, 4);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(370, 29);
             this.label20.TabIndex = 40;
@@ -254,15 +256,15 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.txt_address);
             this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.textBox26);
+            this.panel1.Controls.Add(this.nationalnost);
             this.panel1.Controls.Add(this.label29);
-            this.panel1.Controls.Add(this.textBox27);
+            this.panel1.Controls.Add(this.txt2);
             this.panel1.Controls.Add(this.label30);
             this.panel1.Controls.Add(this.txt_address_in_stav);
             this.panel1.Controls.Add(this.label31);
-            this.panel1.Controls.Add(this.textBox29);
+            this.panel1.Controls.Add(this.txt_odn);
             this.panel1.Controls.Add(this.label32);
-            this.panel1.Controls.Add(this.textBox30);
+            this.panel1.Controls.Add(this.txt_family_status);
             this.panel1.Controls.Add(this.label11);
             this.panel1.Controls.Add(this.txtEducation_stud);
             this.panel1.Controls.Add(this.label4);
@@ -279,13 +281,13 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.txtFio_stud);
             this.panel1.Location = new System.Drawing.Point(0, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 388);
+            this.panel1.Size = new System.Drawing.Size(851, 322);
             this.panel1.TabIndex = 41;
             // 
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(278, 172);
+            this.label21.Location = new System.Drawing.Point(284, 143);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(40, 13);
             this.label21.TabIndex = 148;
@@ -293,7 +295,7 @@ namespace System_College_of_Communication.students
             // 
             // textBox19
             // 
-            this.textBox19.Location = new System.Drawing.Point(278, 188);
+            this.textBox19.Location = new System.Drawing.Point(284, 159);
             this.textBox19.Name = "textBox19";
             this.textBox19.Size = new System.Drawing.Size(100, 20);
             this.textBox19.TabIndex = 147;
@@ -301,7 +303,7 @@ namespace System_College_of_Communication.students
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(470, 232);
+            this.label22.Location = new System.Drawing.Point(468, 178);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(91, 13);
             this.label22.TabIndex = 146;
@@ -309,7 +311,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_phone_mam
             // 
-            this.txt_phone_mam.Location = new System.Drawing.Point(473, 248);
+            this.txt_phone_mam.Location = new System.Drawing.Point(471, 194);
             this.txt_phone_mam.Name = "txt_phone_mam";
             this.txt_phone_mam.Size = new System.Drawing.Size(100, 20);
             this.txt_phone_mam.TabIndex = 145;
@@ -317,7 +319,7 @@ namespace System_College_of_Communication.students
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(473, 184);
+            this.label23.Location = new System.Drawing.Point(471, 130);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(67, 13);
             this.label23.TabIndex = 144;
@@ -325,7 +327,7 @@ namespace System_College_of_Communication.students
             // 
             // txtFIO_mam
             // 
-            this.txtFIO_mam.Location = new System.Drawing.Point(473, 200);
+            this.txtFIO_mam.Location = new System.Drawing.Point(471, 146);
             this.txtFIO_mam.Name = "txtFIO_mam";
             this.txtFIO_mam.Size = new System.Drawing.Size(100, 20);
             this.txtFIO_mam.TabIndex = 143;
@@ -333,7 +335,7 @@ namespace System_College_of_Communication.students
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(595, 232);
+            this.label24.Location = new System.Drawing.Point(593, 178);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(84, 13);
             this.label24.TabIndex = 142;
@@ -341,7 +343,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_phone_pap
             // 
-            this.txt_phone_pap.Location = new System.Drawing.Point(598, 248);
+            this.txt_phone_pap.Location = new System.Drawing.Point(596, 194);
             this.txt_phone_pap.Name = "txt_phone_pap";
             this.txt_phone_pap.Size = new System.Drawing.Size(100, 20);
             this.txt_phone_pap.TabIndex = 141;
@@ -349,7 +351,7 @@ namespace System_College_of_Communication.students
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(596, 184);
+            this.label25.Location = new System.Drawing.Point(594, 130);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(60, 13);
             this.label25.TabIndex = 140;
@@ -357,7 +359,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_FIO_Pap
             // 
-            this.txt_FIO_Pap.Location = new System.Drawing.Point(598, 200);
+            this.txt_FIO_Pap.Location = new System.Drawing.Point(596, 146);
             this.txt_FIO_Pap.Name = "txt_FIO_Pap";
             this.txt_FIO_Pap.Size = new System.Drawing.Size(100, 20);
             this.txt_FIO_Pap.TabIndex = 139;
@@ -366,7 +368,7 @@ namespace System_College_of_Communication.students
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label26.Location = new System.Drawing.Point(503, 147);
+            this.label26.Location = new System.Drawing.Point(501, 93);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(278, 29);
             this.label26.TabIndex = 138;
@@ -375,7 +377,7 @@ namespace System_College_of_Communication.students
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(717, 184);
+            this.label27.Location = new System.Drawing.Point(715, 130);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(106, 13);
             this.label27.TabIndex = 136;
@@ -383,7 +385,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_address
             // 
-            this.txt_address.Location = new System.Drawing.Point(720, 200);
+            this.txt_address.Location = new System.Drawing.Point(718, 146);
             this.txt_address.Name = "txt_address";
             this.txt_address.Size = new System.Drawing.Size(100, 20);
             this.txt_address.TabIndex = 135;
@@ -391,39 +393,39 @@ namespace System_College_of_Communication.students
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(720, 232);
+            this.label28.Location = new System.Drawing.Point(718, 178);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(92, 13);
             this.label28.TabIndex = 134;
             this.label28.Text = "Национальность";
             // 
-            // textBox26
+            // nationalnost
             // 
-            this.textBox26.Location = new System.Drawing.Point(723, 248);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(100, 20);
-            this.textBox26.TabIndex = 133;
+            this.nationalnost.Location = new System.Drawing.Point(721, 194);
+            this.nationalnost.Name = "nationalnost";
+            this.nationalnost.Size = new System.Drawing.Size(100, 20);
+            this.nationalnost.TabIndex = 133;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(700, 84);
+            this.label29.Location = new System.Drawing.Point(706, 46);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(101, 13);
             this.label29.TabIndex = 132;
             this.label29.Text = "Чет-то еще можно";
             // 
-            // textBox27
+            // txt2
             // 
-            this.textBox27.Location = new System.Drawing.Point(700, 99);
-            this.textBox27.Name = "textBox27";
-            this.textBox27.Size = new System.Drawing.Size(100, 20);
-            this.textBox27.TabIndex = 131;
+            this.txt2.Location = new System.Drawing.Point(706, 61);
+            this.txt2.Name = "txt2";
+            this.txt2.Size = new System.Drawing.Size(100, 20);
+            this.txt2.TabIndex = 131;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(31, 159);
+            this.label30.Location = new System.Drawing.Point(37, 130);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(115, 26);
             this.label30.TabIndex = 130;
@@ -431,7 +433,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_address_in_stav
             // 
-            this.txt_address_in_stav.Location = new System.Drawing.Point(34, 188);
+            this.txt_address_in_stav.Location = new System.Drawing.Point(40, 159);
             this.txt_address_in_stav.Name = "txt_address_in_stav";
             this.txt_address_in_stav.Size = new System.Drawing.Size(100, 20);
             this.txt_address_in_stav.TabIndex = 129;
@@ -439,39 +441,39 @@ namespace System_College_of_Communication.students
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(577, 83);
+            this.label31.Location = new System.Drawing.Point(583, 45);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(74, 13);
             this.label31.TabIndex = 128;
             this.label31.Text = "Учет на ОДН";
             // 
-            // textBox29
+            // txt_odn
             // 
-            this.textBox29.Location = new System.Drawing.Point(580, 99);
-            this.textBox29.Name = "textBox29";
-            this.textBox29.Size = new System.Drawing.Size(100, 20);
-            this.textBox29.TabIndex = 127;
+            this.txt_odn.Location = new System.Drawing.Point(586, 61);
+            this.txt_odn.Name = "txt_odn";
+            this.txt_odn.Size = new System.Drawing.Size(100, 20);
+            this.txt_odn.TabIndex = 127;
             // 
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(459, 83);
+            this.label32.Location = new System.Drawing.Point(465, 45);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(96, 13);
             this.label32.TabIndex = 126;
             this.label32.Text = "Семейный статус";
             // 
-            // textBox30
+            // txt_family_status
             // 
-            this.textBox30.Location = new System.Drawing.Point(459, 99);
-            this.textBox30.Name = "textBox30";
-            this.textBox30.Size = new System.Drawing.Size(100, 20);
-            this.textBox30.TabIndex = 125;
+            this.txt_family_status.Location = new System.Drawing.Point(465, 61);
+            this.txt_family_status.Name = "txt_family_status";
+            this.txt_family_status.Size = new System.Drawing.Size(100, 20);
+            this.txt_family_status.TabIndex = 125;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(270, 115);
+            this.label11.Location = new System.Drawing.Point(276, 86);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(75, 13);
             this.label11.TabIndex = 92;
@@ -479,7 +481,7 @@ namespace System_College_of_Communication.students
             // 
             // txtEducation_stud
             // 
-            this.txtEducation_stud.Location = new System.Drawing.Point(270, 131);
+            this.txtEducation_stud.Location = new System.Drawing.Point(276, 102);
             this.txtEducation_stud.Name = "txtEducation_stud";
             this.txtEducation_stud.Size = new System.Drawing.Size(100, 20);
             this.txtEducation_stud.TabIndex = 91;
@@ -487,7 +489,7 @@ namespace System_College_of_Communication.students
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(158, 159);
+            this.label4.Location = new System.Drawing.Point(164, 130);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(106, 26);
             this.label4.TabIndex = 88;
@@ -495,7 +497,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_address_pasport
             // 
-            this.txt_address_pasport.Location = new System.Drawing.Point(161, 188);
+            this.txt_address_pasport.Location = new System.Drawing.Point(167, 159);
             this.txt_address_pasport.Name = "txt_address_pasport";
             this.txt_address_pasport.Size = new System.Drawing.Size(100, 20);
             this.txt_address_pasport.TabIndex = 87;
@@ -503,7 +505,7 @@ namespace System_College_of_Communication.students
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(267, 71);
+            this.label5.Location = new System.Drawing.Point(273, 42);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(111, 13);
             this.label5.TabIndex = 86;
@@ -511,7 +513,7 @@ namespace System_College_of_Communication.students
             // 
             // txt_passport
             // 
-            this.txt_passport.Location = new System.Drawing.Point(270, 87);
+            this.txt_passport.Location = new System.Drawing.Point(276, 58);
             this.txt_passport.Name = "txt_passport";
             this.txt_passport.Size = new System.Drawing.Size(100, 20);
             this.txt_passport.TabIndex = 85;
@@ -519,7 +521,7 @@ namespace System_College_of_Communication.students
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(161, 115);
+            this.label6.Location = new System.Drawing.Point(167, 86);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(52, 13);
             this.label6.TabIndex = 84;
@@ -527,7 +529,7 @@ namespace System_College_of_Communication.students
             // 
             // txtphone_stud
             // 
-            this.txtphone_stud.Location = new System.Drawing.Point(161, 131);
+            this.txtphone_stud.Location = new System.Drawing.Point(167, 102);
             this.txtphone_stud.Name = "txtphone_stud";
             this.txtphone_stud.Size = new System.Drawing.Size(100, 20);
             this.txtphone_stud.TabIndex = 83;
@@ -535,7 +537,7 @@ namespace System_College_of_Communication.students
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(31, 115);
+            this.label3.Location = new System.Drawing.Point(37, 86);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(86, 13);
             this.label3.TabIndex = 82;
@@ -543,7 +545,7 @@ namespace System_College_of_Communication.students
             // 
             // txtBirthday_stud
             // 
-            this.txtBirthday_stud.Location = new System.Drawing.Point(31, 131);
+            this.txtBirthday_stud.Location = new System.Drawing.Point(37, 102);
             this.txtBirthday_stud.Name = "txtBirthday_stud";
             this.txtBirthday_stud.Size = new System.Drawing.Size(100, 20);
             this.txtBirthday_stud.TabIndex = 81;
@@ -551,7 +553,7 @@ namespace System_College_of_Communication.students
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(158, 71);
+            this.label2.Location = new System.Drawing.Point(164, 42);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 80;
@@ -559,7 +561,7 @@ namespace System_College_of_Communication.students
             // 
             // txtgroup_stud
             // 
-            this.txtgroup_stud.Location = new System.Drawing.Point(158, 87);
+            this.txtgroup_stud.Location = new System.Drawing.Point(164, 58);
             this.txtgroup_stud.Name = "txtgroup_stud";
             this.txtgroup_stud.Size = new System.Drawing.Size(100, 20);
             this.txtgroup_stud.TabIndex = 79;
@@ -567,7 +569,7 @@ namespace System_College_of_Communication.students
             // lable
             // 
             this.lable.AutoSize = true;
-            this.lable.Location = new System.Drawing.Point(31, 71);
+            this.lable.Location = new System.Drawing.Point(37, 42);
             this.lable.Name = "lable";
             this.lable.Size = new System.Drawing.Size(34, 13);
             this.lable.TabIndex = 78;
@@ -575,7 +577,7 @@ namespace System_College_of_Communication.students
             // 
             // txtFio_stud
             // 
-            this.txtFio_stud.Location = new System.Drawing.Point(31, 87);
+            this.txtFio_stud.Location = new System.Drawing.Point(37, 58);
             this.txtFio_stud.Name = "txtFio_stud";
             this.txtFio_stud.Size = new System.Drawing.Size(100, 20);
             this.txtFio_stud.TabIndex = 77;
@@ -585,14 +587,14 @@ namespace System_College_of_Communication.students
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(851, 415);
+            this.ClientSize = new System.Drawing.Size(851, 350);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "StudentsUpdate";
-            this.Text = "StudentsUpdate";
+            this.Text = "Редактировать студента";
             this.Load += new System.EventHandler(this.StudentsUpdate_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
@@ -638,15 +640,15 @@ namespace System_College_of_Communication.students
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox textBox26;
+        private System.Windows.Forms.TextBox nationalnost;
         private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.TextBox textBox27;
+        private System.Windows.Forms.TextBox txt2;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txt_address_in_stav;
         private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.TextBox textBox29;
+        private System.Windows.Forms.TextBox txt_odn;
         private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TextBox textBox30;
+        private System.Windows.Forms.TextBox txt_family_status;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtEducation_stud;
         private System.Windows.Forms.Label label4;

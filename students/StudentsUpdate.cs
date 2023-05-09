@@ -18,7 +18,6 @@ namespace System_College_of_Communication.students
 
         private readonly students.StudentsList _prevent;
 
-       // string id, fio_stud, g_stud;
         public StudentsUpdate(students.StudentsList prevent)
         {
             InitializeComponent();
@@ -30,9 +29,17 @@ namespace System_College_of_Communication.students
             MessageBox.Show("Пока автор не реализовал Эдинг-Динамичный");
         }
 
-        public void UpdateInfo()
+        public void UpdateInfo(string[] array)
         {
-            //TODO...
+            for(int i = 0; i < array.Length; i++)
+            {
+                
+            }
+        }
+
+        public void Clear(string[] arr)
+        {
+            MessageBox.Show("\n" + arr);
         }
 
         private void StudentsUpdate_Load(object sender, EventArgs e)
@@ -41,6 +48,38 @@ namespace System_College_of_Communication.students
             string sql_path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + ";Integrated Security=True";
             sqlConnection = new SqlConnection(sql_path);
             sqlConnection.Open();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            /*
+           new Students = {
+                txtFio_stud.Text,
+                txtgroup_stud.Text,
+                txt_passport.Text,
+                txtBirthday_stud.Text,
+                txtphone_stud.Text,
+                txtEducation_stud.Text,
+                txt_address_in_stav.Text,
+                txt_address_pasport.Text,
+                txt_family_status.Text,
+                txt_odn.Text,
+                txtFIO_mam.Text,
+                txt_FIO_Pap.Text,
+                txt_address.Text,
+                txt_phone_mam.Text,
+                txt_phone_pap.Text,
+                txt_address.Text,
+                nationalnost.Text
+            };*/
+
+
+            //UpdateInfo(Students);
+        }
+
+        private void импортToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
 
         //Button
