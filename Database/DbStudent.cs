@@ -92,11 +92,12 @@ namespace System_College_of_Communication.Database
             catch (Exception ex)
             {
 
-                MessageBox.Show("Error not update: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Error not delete: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             con.Close();
         }
 
+        //Это функция делает поиск
         public static void DisplayAndSearch(string query, DataGridView dvg)
         {
             string sql = query;

@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using System.Collections.ObjectModel;
 
 namespace System_College_of_Communication.students
 {
@@ -31,15 +32,38 @@ namespace System_College_of_Communication.students
 
         public void UpdateInfo(string[] array)
         {
-            for(int i = 0; i < array.Length; i++)
+            for (int i = 0; i < array.Length; i++)
             {
-                
+                File.WriteAllLines(@"C:\TextFile.txt", array);
             }
+            /*
+            string sql = "UPDATE Student_info SET fio_stud = @StudentFio, g_stud = @StudentGroup WHERE id = @Studentid";
+            SqlConnection con = Database.DbStudent.GetConnection();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
+
+            cmd.Parameters.AddWithValue("@Studentid", id);
+            cmd.Parameters.AddWithValue("@StudentFio", std.FIO_stud);
+            cmd.Parameters.AddWithValue("@StudentGroup", std.Group_stud);
+
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show($"Успешно обновил!\nСтудент: { std.FIO_stud} \nГруппы: { std.Group_stud}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error not update: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+            */
         }
 
         public void Clear(string[] arr)
         {
-            MessageBox.Show("\n" + arr);
+            //MessageBox.Show("\n" + arr);
         }
 
         private void StudentsUpdate_Load(object sender, EventArgs e)
@@ -52,8 +76,8 @@ namespace System_College_of_Communication.students
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            /*
-           new Students = {
+            
+            string[] Students_info = {
                 txtFio_stud.Text,
                 txtgroup_stud.Text,
                 txt_passport.Text,
@@ -71,10 +95,11 @@ namespace System_College_of_Communication.students
                 txt_phone_pap.Text,
                 txt_address.Text,
                 nationalnost.Text
-            };*/
+            };
 
 
-            //UpdateInfo(Students);
+            UpdateInfo(Students_info);
+            
         }
 
         private void импортToolStripMenuItem_Click(object sender, EventArgs e)

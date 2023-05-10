@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
+using Excel = Microsoft.Office.Interop.Excel;
+
 
 namespace System_College_of_Communication.students
 {
@@ -82,6 +84,31 @@ namespace System_College_of_Communication.students
             }
             
         }
+
+        private void import_excel_Click(object sender, EventArgs e)
+        {
+
         
+        }
+
+        private void export_excel_Click(object sender, EventArgs e)
+        {
+            Excel.Application exApp = new Excel.Application();
+
+            exApp.Workbooks.Add();
+            Excel.Worksheet wsh = (Excel.Worksheet)exApp.ActiveSheet;
+            int i, j;
+            string rep;
+            for (i = 0; i <= dataGridView.RowCount - 1; i++)
+            {
+                for (j = 0; j <= dataGridView.ColumnCount - 1; j++)
+                {
+                    wsh.Cells[1, j + 1] = dataGridView.Columns[j].HeaderText.ToString();
+                    rep = dataGridView[j, i].Value.ToString().Replace("|", "\\");
+                    wsh.Cells[i + 2, j + 1] = rep;
+                }
+            }
+            exApp.Visible = true;
+        }
     }
 }
