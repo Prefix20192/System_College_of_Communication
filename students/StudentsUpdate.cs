@@ -17,53 +17,17 @@ namespace System_College_of_Communication.students
     {
         private SqlConnection sqlConnection = null;
 
-        private readonly students.StudentsList _prevent;
+        private string id;
 
-        public StudentsUpdate(students.StudentsList prevent)
+        public StudentsUpdate(string std_id)
         {
             InitializeComponent();
-            _prevent = prevent;
+            id = std_id;
         }
 
         private void btnNewlable_and_btn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Пока автор не реализовал Эдинг-Динамичный");
-        }
-
-        public void UpdateInfo(string[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                File.WriteAllLines(@"C:\TextFile.txt", array);
-            }
-            /*
-            string sql = "UPDATE Student_info SET fio_stud = @StudentFio, g_stud = @StudentGroup WHERE id = @Studentid";
-            SqlConnection con = Database.DbStudent.GetConnection();
-            SqlCommand cmd = new SqlCommand(sql, con);
-            cmd.CommandType = CommandType.Text;
-
-            cmd.Parameters.AddWithValue("@Studentid", id);
-            cmd.Parameters.AddWithValue("@StudentFio", std.FIO_stud);
-            cmd.Parameters.AddWithValue("@StudentGroup", std.Group_stud);
-
-
-            try
-            {
-                cmd.ExecuteNonQuery();
-                MessageBox.Show($"Успешно обновил!\nСтудент: { std.FIO_stud} \nГруппы: { std.Group_stud}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            catch (Exception ex)
-            {
-
-                MessageBox.Show("Error not update: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            con.Close();
-            */
-        }
-
-        public void Clear(string[] arr)
-        {
-            //MessageBox.Show("\n" + arr);
         }
 
         private void StudentsUpdate_Load(object sender, EventArgs e)
@@ -76,30 +40,48 @@ namespace System_College_of_Communication.students
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            
-            string[] Students_info = {
-                txtFio_stud.Text,
-                txtgroup_stud.Text,
-                txt_passport.Text,
-                txtBirthday_stud.Text,
-                txtphone_stud.Text,
-                txtEducation_stud.Text,
-                txt_address_in_stav.Text,
-                txt_address_pasport.Text,
-                txt_family_status.Text,
-                txt_odn.Text,
-                txtFIO_mam.Text,
-                txt_FIO_Pap.Text,
-                txt_address.Text,
-                txt_phone_mam.Text,
-                txt_phone_pap.Text,
-                txt_address.Text,
-                nationalnost.Text
-            };
+   
+            string sql = "UPDATE Students SET fio_stud = @StudentFio, g_stud = @StudentGroup WHERE id = @Studentid;" +
+                "INSERT INTO Student_info (stud_id, family_id, birthday, phone, pasport, education, address_in_stav, propiska, family_status, Accounting_of_ODN) VALUES(@Studentid, @f_id, @StudentBirhtday, @StudPhone, @StudPassport, @StudEducation, @StudAddress_in_stav, @StudPropiska, @StudFamily_status, @StudODN);" +
+                "INSERT INTO family (fio_mam, fio_pap, phone_mam, phone_pap, address, national) VALUES(@fio_mam, @fio_pap, @phone_mam, @phone_pap, @adress, @nation)";
+            SqlConnection con = Database.DbStudent.GetConnection();
+            SqlCommand cmd = new SqlCommand(sql, con);
+            cmd.CommandType = CommandType.Text;
 
+            cmd.Parameters.AddWithValue("@Studentid", id);
+            cmd.Parameters.AddWithValue("@StudentFio", txtFio_stud.Text);
+            cmd.Parameters.AddWithValue("@StudentGroup", txtgroup_stud.Text);
 
-            UpdateInfo(Students_info);
+            cmd.Parameters.AddWithValue("@StudentBirhtday", txtBirthday_stud.Text);
+            cmd.Parameters.AddWithValue("@StudPhone", txtphone_stud.Text);
+            cmd.Parameters.AddWithValue("@StudPassport", txt_passport.Text);
+            cmd.Parameters.AddWithValue("@StudEducation", txtEducation_stud.Text);
+            cmd.Parameters.AddWithValue("@StudAddress_in_stav", txt_address_in_stav.Text);
+            cmd.Parameters.AddWithValue("@StudPropiska", txt_address_pasport.Text);
+            cmd.Parameters.AddWithValue("@StudFamily_status", txt_family_status.Text);
+            cmd.Parameters.AddWithValue("@StudODN", txt_odn.Text);
+
+            cmd.Parameters.AddWithValue("@fio_mam", txtFIO_mam.Text);
+            cmd.Parameters.AddWithValue("@fio_pap", txt_FIO_Pap.Text);
+            cmd.Parameters.AddWithValue("@phone_mam", txt_phone_mam.Text);
+            cmd.Parameters.AddWithValue("@phone_pap", txt_phone_pap.Text);
+            cmd.Parameters.AddWithValue("@adress", txt_address.Text);
+            cmd.Parameters.AddWithValue("@nation", nationalnost.Text);
+
             
+
+            try
+            {
+                cmd.ExecuteNonQuery();
+                MessageBox.Show($"Успешно обновил!\nСтудент: { txtFio_stud.Text} \nГруппы: { txtgroup_stud.Text}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("Error not update: " + ex, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            con.Close();
+
         }
 
         private void импортToolStripMenuItem_Click(object sender, EventArgs e)
@@ -107,16 +89,5 @@ namespace System_College_of_Communication.students
 
         }
 
-        //Button
-        /*
-            if(btn.Text == "Обновить")
-            {
-                Student std = new Student(fio_stud.Text.Trim(), group_stud.Text.Trim());
-                Database.DbStudent.UpdateStudent(std, id);
-                Clear();
-                btnAdd.Text = "Успешно";
-            }
-         
-         */
     }
 }

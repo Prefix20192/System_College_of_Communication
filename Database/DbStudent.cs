@@ -7,6 +7,7 @@ using System.Data.SqlClient;
 using System.IO;
 using System.Windows.Forms;
 using System.Data;
+using System.Configuration;
 
 namespace System_College_of_Communication.Database
 {
@@ -14,9 +15,11 @@ namespace System_College_of_Communication.Database
     {
         public static SqlConnection GetConnection()
         {
+            /*
             var path = Path.GetFullPath(@"../../Database/Database.mdf");
             string sql_path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + ";Integrated Security=True";
-            SqlConnection con = new SqlConnection(sql_path);
+            */
+            SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["base_main"].ConnectionString);
             try
             {
                 con.Open();

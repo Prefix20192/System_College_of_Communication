@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.IO;
 using Excel = Microsoft.Office.Interop.Excel;
+using System.Configuration;
 
 
 namespace System_College_of_Communication.students
@@ -34,9 +35,7 @@ namespace System_College_of_Communication.students
 
         private void StudentsList_Load(object sender, EventArgs e)
         {
-            var path = Path.GetFullPath(@"../../Database/Database.mdf");
-            string sql_path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="+path+";Integrated Security=True";
-            sqlConnection = new SqlConnection(sql_path);
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["base_main"].ConnectionString);
             sqlConnection.Open();
         }
 
@@ -68,7 +67,7 @@ namespace System_College_of_Communication.students
             if(e.ColumnIndex == 1)
             {
                 //Edit
-                students.StudentsUpdate stdUpdate = new students.StudentsUpdate(this);
+                students.StudentsUpdate stdUpdate = new students.StudentsUpdate(dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
                 stdUpdate.Show();
             }
             if(e.ColumnIndex == 2)
@@ -87,12 +86,16 @@ namespace System_College_of_Communication.students
 
         private void import_excel_Click(object sender, EventArgs e)
         {
-
+            students.ImportStudentsFromExcel stdimportxls = new students.ImportStudentsFromExcel();
+            stdimportxls.Show();
         
         }
 
         private void export_excel_Click(object sender, EventArgs e)
         {
+  
+
+            
             Excel.Application exApp = new Excel.Application();
 
             exApp.Workbooks.Add();
