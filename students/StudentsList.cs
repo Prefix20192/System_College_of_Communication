@@ -18,6 +18,7 @@ namespace System_College_of_Communication.students
     public partial class StudentsList : Form
     {
         StudentsUpdate std_upd;
+        StudentInfo std_info;
     
         private SqlConnection sqlConnection = null;
 
@@ -25,6 +26,7 @@ namespace System_College_of_Communication.students
         {
             InitializeComponent();
             std_upd = new StudentsUpdate(this);
+            std_info = new StudentInfo(this);
         }
 
 
@@ -61,8 +63,8 @@ namespace System_College_of_Communication.students
             
             if(e.ColumnIndex == 0)
             {
-                //View
-                return;
+                std_info.id = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                std_info.ShowDialog();
             }
             if(e.ColumnIndex == 1)
             {
@@ -96,8 +98,6 @@ namespace System_College_of_Communication.students
         private void export_excel_Click(object sender, EventArgs e)
         {
   
-
-            
             Excel.Application exApp = new Excel.Application();
 
             exApp.Workbooks.Add();

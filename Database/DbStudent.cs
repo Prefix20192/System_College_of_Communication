@@ -101,13 +101,11 @@ namespace System_College_of_Communication.Database
             }
             else
             {
-                string sql = "UPDATE Student_info SET birthday = @StudBirthday, phone = @StudPhone, passport = @passport, education = @StudEducation, address_in_stav = @StudAddress_In_Stav, propiska = @StudPropiska, family_status = @StudFamilyStatus, Accounting_of_ODN = @StudODN, Fio_mam = @Fio_mam, fio_pap = @fio_pap, phone_mam = @PhoneMam, phone_pap = @Phone_pap, address_family = @AddresFamily, nationalnost = @Notional WHERE stud_id = @Studentid";
+                string sql = "INSERT INTO Student_info (stud_id, birthday, phone, pasport, education, address_in_stav, propiska, family_status, Accounting_of_ODN, Fio_mam, fio_pap, phone_mam, phone_pap, address_family, nationalnost) VALUES (@Studentid,@StudBirthday,@StudPhone,@passport,@StudEducation,@StudAddress_In_Stav,@StudPropiska,@StudFamilyStatus,@StudODN,@Fio_mam,@fio_pap,@PhoneMam,@Phone_pap,@AddresFamily,@Notional)";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Studentid", id);
-                cmd.Parameters.AddWithValue("@StudentFio", std.fio_stud);
-                cmd.Parameters.AddWithValue("@StudentGroup", std.group_stud);
 
                 cmd.Parameters.AddWithValue("@StudBirthday", std.Birthday_stud);
                 cmd.Parameters.AddWithValue("@StudPhone", std.passport_stud);
@@ -128,7 +126,7 @@ namespace System_College_of_Communication.Database
                 try
                 {
                     cmd.ExecuteNonQuery();
-                    MessageBox.Show($"Успешно Добавил данные!\nСтудента: { std.fio_stud} \nГруппы: { std.group_stud}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show($"Успешно добавил данные!\nСтудента: { std.fio_stud} \nГруппы: { std.group_stud}", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
                 catch (Exception ex)
                 {
