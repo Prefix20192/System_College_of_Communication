@@ -63,7 +63,7 @@ namespace System_College_of_Communication.students
             this.label27 = new System.Windows.Forms.Label();
             this.txt_address = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.nationalnost = new System.Windows.Forms.TextBox();
+            this.nationalnosti = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.txt2 = new System.Windows.Forms.TextBox();
             this.label30 = new System.Windows.Forms.Label();
@@ -127,20 +127,20 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem,
             this.экспортToolStripMenuItem});
             this.экспортExeclToolStripMenuItem.Name = "экспортExeclToolStripMenuItem";
-            this.экспортExeclToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.экспортExeclToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.экспортExeclToolStripMenuItem.Text = "Execl";
             // 
             // импортToolStripMenuItem
             // 
             this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
-            this.импортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.импортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.импортToolStripMenuItem.Text = "Импорт";
             this.импортToolStripMenuItem.Click += new System.EventHandler(this.импортToolStripMenuItem_Click);
             // 
             // экспортToolStripMenuItem
             // 
             this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
             this.экспортToolStripMenuItem.Text = "Экспорт";
             // 
             // имяпортToolStripMenuItem
@@ -149,7 +149,7 @@ namespace System_College_of_Communication.students
             this.импротToolStripMenuItem,
             this.экспортToolStripMenuItem1});
             this.имяпортToolStripMenuItem.Name = "имяпортToolStripMenuItem";
-            this.имяпортToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.имяпортToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.имяпортToolStripMenuItem.Text = "Word";
             // 
             // импротToolStripMenuItem
@@ -170,7 +170,7 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem1,
             this.экспортToolStripMenuItem2});
             this.acessToolStripMenuItem.Name = "acessToolStripMenuItem";
-            this.acessToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.acessToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.acessToolStripMenuItem.Text = "Access";
             // 
             // импортToolStripMenuItem1
@@ -191,7 +191,7 @@ namespace System_College_of_Communication.students
             this.импортToolStripMenuItem2,
             this.экспортToolStripMenuItem3});
             this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
             this.tXTToolStripMenuItem.Text = "TXT";
             // 
             // импортToolStripMenuItem2
@@ -256,7 +256,7 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.label27);
             this.panel1.Controls.Add(this.txt_address);
             this.panel1.Controls.Add(this.label28);
-            this.panel1.Controls.Add(this.nationalnost);
+            this.panel1.Controls.Add(this.nationalnosti);
             this.panel1.Controls.Add(this.label29);
             this.panel1.Controls.Add(this.txt2);
             this.panel1.Controls.Add(this.label30);
@@ -399,12 +399,12 @@ namespace System_College_of_Communication.students
             this.label28.TabIndex = 134;
             this.label28.Text = "Национальность";
             // 
-            // nationalnost
+            // nationalnosti
             // 
-            this.nationalnost.Location = new System.Drawing.Point(721, 194);
-            this.nationalnost.Name = "nationalnost";
-            this.nationalnost.Size = new System.Drawing.Size(100, 20);
-            this.nationalnost.TabIndex = 133;
+            this.nationalnosti.Location = new System.Drawing.Point(721, 194);
+            this.nationalnosti.Name = "nationalnosti";
+            this.nationalnosti.Size = new System.Drawing.Size(100, 20);
+            this.nationalnosti.TabIndex = 133;
             // 
             // label29
             // 
@@ -595,7 +595,6 @@ namespace System_College_of_Communication.students
             this.MaximizeBox = false;
             this.Name = "StudentsUpdate";
             this.Text = "Редактировать студента";
-            this.Load += new System.EventHandler(this.StudentsUpdate_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -640,7 +639,7 @@ namespace System_College_of_Communication.students
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.TextBox txt_address;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.TextBox nationalnost;
+        private System.Windows.Forms.TextBox nationalnosti;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txt2;
         private System.Windows.Forms.Label label30;

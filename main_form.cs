@@ -19,28 +19,28 @@ namespace System_College_of_Communication
 
         private void open_student_table_Click(object sender, EventArgs e)
         {
-            this.Hide();
+          
             students.StudentsList studetns = new students.StudentsList();
             studetns.Show();
         }
 
         private void open_view_doc_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            
             Documents.Doc doc = new Documents.Doc();
             doc.Show();
         }
 
         private void open_view_rasspisanie_Click(object sender, EventArgs e)
         {
-            this.Hide();
+          
             Schedule.Schedule rassp = new Schedule.Schedule();
             rassp.Show();
         }
 
         private void open_view_concurse_Click(object sender, EventArgs e)
         {
-            this.Hide();
+         
             Cool_Hour.Col_Hours col_h = new Cool_Hour.Col_Hours();
             col_h.Show();
         }
@@ -48,7 +48,7 @@ namespace System_College_of_Communication
 
     //Код для автозагрузки
      /*
-        const string name = "MyTestApplication";
+        const string name = "System_College_of_Communication";
         using Microsoft.Win32;
         public bool SetAutorunValue(bool autorun)
         {

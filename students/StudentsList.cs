@@ -17,14 +17,14 @@ namespace System_College_of_Communication.students
 {
     public partial class StudentsList : Form
     {
-        //
-        //  students.StudentsUpdate std_upd;
-        //
+        StudentsUpdate std_upd;
+    
         private SqlConnection sqlConnection = null;
 
         public StudentsList()
         {
             InitializeComponent();
+            std_upd = new StudentsUpdate(this);
         }
 
 
@@ -67,8 +67,10 @@ namespace System_College_of_Communication.students
             if(e.ColumnIndex == 1)
             {
                 //Edit
-                students.StudentsUpdate stdUpdate = new students.StudentsUpdate(dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
-                stdUpdate.Show();
+                std_upd.Clear();
+                std_upd.id = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                std_upd.UpdateInfo();
+                std_upd.ShowDialog();
             }
             if(e.ColumnIndex == 2)
             {
