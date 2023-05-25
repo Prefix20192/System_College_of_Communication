@@ -15,10 +15,7 @@ namespace System_College_of_Communication.Database
     {
         public static SqlConnection GetConnection()
         {
-            /*
-            var path = Path.GetFullPath(@"../../Database/Database.mdf");
-            string sql_path = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=" + path + ";Integrated Security=True";
-            */
+         
             SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["base_main"].ConnectionString);
             try
             {
@@ -55,8 +52,7 @@ namespace System_College_of_Communication.Database
         }       
         public static void UpdateStudent(students.Student_info std, string id)
         {
-            string sql_select = $"SELECT * FROM Students WHERE id = {id};" +
-                $"SELECT * FROM Student_info WHERE stud_id = {id}";
+            string sql_select = $"SELECT * FROM Student_info WHERE stud_id = {id}";
             SqlConnection con = GetConnection();
             SqlCommand command = new SqlCommand(sql_select, con);
             SqlDataReader reader = command.ExecuteReader();
@@ -86,7 +82,7 @@ namespace System_College_of_Communication.Database
                 cmd.Parameters.AddWithValue("@AddresFamily", std.address);
                 cmd.Parameters.AddWithValue("@Notional", std.nationalnost);
 
-
+                reader.Close();
                 try
                 {
                     cmd.ExecuteNonQuery();
@@ -101,11 +97,14 @@ namespace System_College_of_Communication.Database
             }
             else
             {
-                string sql = "INSERT INTO Student_info (stud_id, birthday, phone, pasport, education, address_in_stav, propiska, family_status, Accounting_of_ODN, Fio_mam, fio_pap, phone_mam, phone_pap, address_family, nationalnost) VALUES (@Studentid,@StudBirthday,@StudPhone,@passport,@StudEducation,@StudAddress_In_Stav,@StudPropiska,@StudFamilyStatus,@StudODN,@Fio_mam,@fio_pap,@PhoneMam,@Phone_pap,@AddresFamily,@Notional)";
+                string sql = "INSERT INTO Student_info (stud_id, birthday, phone, pasport, education, address_in_stav, propiska, family_status, Accounting_of_ODN, Fio_mam, fio_pap, phone_mam, phone_pap, address_family, nationalnost) VALUES (@Studentid,@StudBirthday,@StudPhone,@passport,@StudEducation,@StudAddress_In_Stav,@StudPropiska,@StudFamilyStatus,@StudODN,@Fio_mam,@fio_pap,@PhoneMam,@Phone_pap,@AddresFamily,@Notional);" +
+                    "UPDATE Students SET fio_stud = @StudentFio, g_stud = @StudentGroup WHERE id = @Studentid;";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
 
                 cmd.Parameters.AddWithValue("@Studentid", id);
+                cmd.Parameters.AddWithValue("@StudentFio", std.fio_stud);
+                cmd.Parameters.AddWithValue("@StudentGroup", std.group_stud);
 
                 cmd.Parameters.AddWithValue("@StudBirthday", std.Birthday_stud);
                 cmd.Parameters.AddWithValue("@StudPhone", std.passport_stud);
@@ -122,7 +121,7 @@ namespace System_College_of_Communication.Database
                 cmd.Parameters.AddWithValue("@AddresFamily", std.address);
                 cmd.Parameters.AddWithValue("@Notional", std.nationalnost);
 
-
+                reader.Close();
                 try
                 {
                     cmd.ExecuteNonQuery();

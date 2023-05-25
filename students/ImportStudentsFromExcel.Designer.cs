@@ -33,16 +33,16 @@ namespace System_College_of_Communication.students
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.btnBrowser = new System.Windows.Forms.Button();
-            this.txt_filename = new System.Windows.Forms.TextBox();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fio_stud = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.g_stud = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
+            this.txtFileName = new System.Windows.Forms.TextBox();
+            this.choSheet = new System.Windows.Forms.ComboBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnBrows = new System.Windows.Forms.Button();
+            this.btnImport = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -51,8 +51,9 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(687, 71);
+            this.panel1.Size = new System.Drawing.Size(766, 58);
             this.panel1.TabIndex = 0;
             // 
             // label1
@@ -60,7 +61,8 @@ namespace System_College_of_Communication.students
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(152, 20);
+            this.label1.Location = new System.Drawing.Point(210, 9);
+            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(367, 29);
             this.label1.TabIndex = 0;
@@ -68,90 +70,104 @@ namespace System_College_of_Communication.students
             // 
             // panel2
             // 
-            this.panel2.Controls.Add(this.btnSave);
-            this.panel2.Controls.Add(this.btnBrowser);
-            this.panel2.Controls.Add(this.txt_filename);
-            this.panel2.Controls.Add(this.dataGridView);
-            this.panel2.Location = new System.Drawing.Point(0, 67);
+            this.panel2.Controls.Add(this.btnImport);
+            this.panel2.Controls.Add(this.label3);
+            this.panel2.Controls.Add(this.txtFileName);
+            this.panel2.Controls.Add(this.choSheet);
+            this.panel2.Controls.Add(this.dataGridView1);
+            this.panel2.Controls.Add(this.label2);
+            this.panel2.Controls.Add(this.btnBrows);
+            this.panel2.Location = new System.Drawing.Point(0, 54);
+            this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(687, 414);
+            this.panel2.Size = new System.Drawing.Size(764, 446);
             this.panel2.TabIndex = 1;
             // 
-            // btnSave
+            // label3
             // 
-            this.btnSave.Location = new System.Drawing.Point(589, 3);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 23);
-            this.btnSave.TabIndex = 3;
-            this.btnSave.Text = "Импорт";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.Location = new System.Drawing.Point(12, 402);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(44, 17);
+            this.label3.TabIndex = 5;
+            this.label3.Text = "Лист:";
             // 
-            // btnBrowser
+            // txtFileName
             // 
-            this.btnBrowser.Location = new System.Drawing.Point(234, 4);
-            this.btnBrowser.Name = "btnBrowser";
-            this.btnBrowser.Size = new System.Drawing.Size(76, 23);
-            this.btnBrowser.TabIndex = 2;
-            this.btnBrowser.Text = "Browser...";
-            this.btnBrowser.UseVisualStyleBackColor = true;
-            this.btnBrowser.Click += new System.EventHandler(this.btnBrowser_Click);
+            this.txtFileName.Location = new System.Drawing.Point(104, 376);
+            this.txtFileName.Name = "txtFileName";
+            this.txtFileName.ReadOnly = true;
+            this.txtFileName.Size = new System.Drawing.Size(616, 20);
+            this.txtFileName.TabIndex = 4;
             // 
-            // txt_filename
+            // choSheet
             // 
-            this.txt_filename.Location = new System.Drawing.Point(7, 4);
-            this.txt_filename.Name = "txt_filename";
-            this.txt_filename.Size = new System.Drawing.Size(221, 22);
-            this.txt_filename.TabIndex = 1;
+            this.choSheet.FormattingEnabled = true;
+            this.choSheet.Location = new System.Drawing.Point(104, 402);
+            this.choSheet.Name = "choSheet";
+            this.choSheet.Size = new System.Drawing.Size(121, 21);
+            this.choSheet.TabIndex = 3;
+            this.choSheet.SelectedIndexChanged += new System.EventHandler(this.choSheet_SelectedIndexChanged);
             // 
-            // dataGridView
+            // dataGridView1
             // 
-            this.dataGridView.AllowUserToAddRows = false;
-            this.dataGridView.AllowUserToDeleteRows = false;
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.id,
-            this.fio_stud,
-            this.g_stud});
-            this.dataGridView.Location = new System.Drawing.Point(0, 32);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.RowTemplate.Height = 24;
-            this.dataGridView.Size = new System.Drawing.Size(687, 382);
-            this.dataGridView.TabIndex = 0;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(761, 356);
+            this.dataGridView1.TabIndex = 2;
             // 
-            // id
+            // label2
             // 
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.Location = new System.Drawing.Point(12, 376);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(86, 17);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Имя файла:";
             // 
-            // fio_stud
+            // btnBrows
             // 
-            this.fio_stud.HeaderText = "fio_stud";
-            this.fio_stud.Name = "fio_stud";
+            this.btnBrows.Location = new System.Drawing.Point(726, 376);
+            this.btnBrows.Name = "btnBrows";
+            this.btnBrows.Size = new System.Drawing.Size(27, 23);
+            this.btnBrows.TabIndex = 0;
+            this.btnBrows.Text = "...";
+            this.btnBrows.UseVisualStyleBackColor = true;
+            this.btnBrows.Click += new System.EventHandler(this.btnBrows_Click);
             // 
-            // g_stud
+            // btnImport
             // 
-            this.g_stud.HeaderText = "g_stud";
-            this.g_stud.Name = "g_stud";
+            this.btnImport.Location = new System.Drawing.Point(317, 402);
+            this.btnImport.Name = "btnImport";
+            this.btnImport.Size = new System.Drawing.Size(110, 30);
+            this.btnImport.TabIndex = 6;
+            this.btnImport.Text = "&Импортировать";
+            this.btnImport.UseVisualStyleBackColor = true;
+            this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
             // 
             // ImportStudentsFromExcel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(687, 482);
+            this.ClientSize = new System.Drawing.Size(766, 498);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MinimizeBox = false;
             this.Name = "ImportStudentsFromExcel";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Импорт студентов из Excel";
             this.Load += new System.EventHandler(this.ImportStudentsFromExcel_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -161,12 +177,12 @@ namespace System_College_of_Communication.students
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.Button btnBrowser;
-        private System.Windows.Forms.TextBox txt_filename;
-        private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fio_stud;
-        private System.Windows.Forms.DataGridViewTextBoxColumn g_stud;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txtFileName;
+        private System.Windows.Forms.ComboBox choSheet;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnBrows;
+        private System.Windows.Forms.Button btnImport;
     }
 }
