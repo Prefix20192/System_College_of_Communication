@@ -26,8 +26,6 @@ namespace System_College_of_Communication.Documents
         {
             sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["base_main"].ConnectionString);
             sqlConnection.Open();
-
-
         }
 
 

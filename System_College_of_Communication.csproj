@@ -244,6 +244,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DependentUpon>Database.mdf</DependentUpon>
     </Content>
+    <None Include="image\avatar\no_avatar.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="Microsoft.Office.Core">

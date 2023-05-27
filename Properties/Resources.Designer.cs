@@ -59,5 +59,15 @@ namespace System_College_of_Communication.Properties {
                 resourceCulture = value;
             }
         }
+        
+        /// <summary>
+        ///   Поиск локализованного ресурса типа System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap no_avatar {
+            get {
+                object obj = ResourceManager.GetObject("no_avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
