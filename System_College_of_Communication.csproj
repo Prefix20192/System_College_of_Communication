@@ -140,6 +140,12 @@
     <Compile Include="students\ImportStudentsFromExcel.Designer.cs">
       <DependentUpon>ImportStudentsFromExcel.cs</DependentUpon>
     </Compile>
+    <Compile Include="students\Import_students_word.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="students\Import_students_word.Designer.cs">
+      <DependentUpon>Import_students_word.cs</DependentUpon>
+    </Compile>
     <Compile Include="students\import_student_info_excel.cs" />
     <Compile Include="students\Student.cs" />
     <Compile Include="students\StudentInfo.cs">
@@ -191,6 +197,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="students\ImportStudentsFromExcel.resx">
       <DependentUpon>ImportStudentsFromExcel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="students\Import_students_word.resx">
+      <DependentUpon>Import_students_word.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="students\StudentInfo.resx">
       <DependentUpon>StudentInfo.cs</DependentUpon>
@@ -260,6 +269,15 @@
       <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
       <VersionMajor>1</VersionMajor>
       <VersionMinor>6</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Word">
+      <Guid>{00020905-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>8</VersionMajor>
+      <VersionMinor>4</VersionMinor>
       <Lcid>0</Lcid>
       <WrapperTool>primary</WrapperTool>
       <Isolated>False</Isolated>

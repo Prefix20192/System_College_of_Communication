@@ -40,8 +40,6 @@ namespace System_College_of_Communication.students
                 for(int i = 0; i < dt.Rows.Count; i++)
                 {
                     import_student_info_excel studentInfo = new import_student_info_excel();
-                    studentInfo.fio_stud = dt.Rows[i]["ФИО Студента"].ToString();
-                    studentInfo.group_stud = dt.Rows[i]["Группа студента"].ToString();
                     studentInfo.passport_stud = dt.Rows[i]["Паспорт студента"].ToString();
                     studentInfo.Birthday_stud = dt.Rows[i]["День рождения"].ToString();
                     studentInfo.phone_stud = dt.Rows[i]["Телефон студента"].ToString();
@@ -56,6 +54,7 @@ namespace System_College_of_Communication.students
                     studentInfo.phone_mam = dt.Rows[i]["Телефон мамы"].ToString();
                     studentInfo.phone_pap = dt.Rows[i]["Телефон папы"].ToString();
                     studentInfo.nationalnost = dt.Rows[i]["Национальность"].ToString();
+                    studentInfo.stud_id = dt.Rows[i]["Номер студента"].ToString();
                     students.Add(studentInfo);
                 }
                 dataGridView1.DataSource = students;

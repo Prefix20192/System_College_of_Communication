@@ -51,5 +51,10 @@ namespace System_College_of_Communication.students
             }
             _pravent.Display();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

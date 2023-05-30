@@ -8,8 +8,7 @@ namespace System_College_of_Communication.students
 {
     public class import_student_info_excel
     {
-        public string fio_stud { get; set; }
-        public string group_stud { get; set; }
+        public string stud_id { get; set; }
         public string passport_stud { get; set; }
         public string Birthday_stud { get; set; }
         public string phone_stud { get; set; }

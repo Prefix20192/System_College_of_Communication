@@ -36,12 +36,10 @@ namespace System_College_of_Communication.students
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnNew = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.textSearch = new System.Windows.Forms.TextBox();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btneksport_word = new System.Windows.Forms.Button();
             this.export_excel = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnImport_word = new System.Windows.Forms.Button();
             this.import_excel = new System.Windows.Forms.Button();
             this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,12 +56,10 @@ namespace System_College_of_Communication.students
             // 
             this.panel1.Controls.Add(this.btnNew);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.textSearch);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btneksport_word);
             this.panel1.Controls.Add(this.export_excel);
-            this.panel1.Controls.Add(this.button3);
+            this.panel1.Controls.Add(this.btnImport_word);
             this.panel1.Controls.Add(this.import_excel);
             this.panel1.Controls.Add(this.dataGridView);
             this.panel1.Location = new System.Drawing.Point(-1, -2);
@@ -90,23 +86,6 @@ namespace System_College_of_Communication.students
             this.label2.TabIndex = 9;
             this.label2.Text = "Поиск";
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(771, 474);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Сортировка";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(774, 490);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(80, 21);
-            this.comboBox1.TabIndex = 7;
-            // 
             // textSearch
             // 
             this.textSearch.Location = new System.Drawing.Point(860, 490);
@@ -116,14 +95,15 @@ namespace System_College_of_Communication.students
             this.textSearch.Text = "Введите ФИО";
             this.textSearch.TextChanged += new System.EventHandler(this.textSearch_TextChanged);
             // 
-            // button5
+            // btneksport_word
             // 
-            this.button5.Location = new System.Drawing.Point(123, 517);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(104, 30);
-            this.button5.TabIndex = 5;
-            this.button5.Text = "Экспорт SQL";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btneksport_word.Location = new System.Drawing.Point(123, 517);
+            this.btneksport_word.Name = "btneksport_word";
+            this.btneksport_word.Size = new System.Drawing.Size(104, 30);
+            this.btneksport_word.TabIndex = 5;
+            this.btneksport_word.Text = "Экспорт Word";
+            this.btneksport_word.UseVisualStyleBackColor = true;
+            this.btneksport_word.Click += new System.EventHandler(this.btneksport_word_Click);
             // 
             // export_excel
             // 
@@ -135,14 +115,15 @@ namespace System_College_of_Communication.students
             this.export_excel.UseVisualStyleBackColor = true;
             this.export_excel.Click += new System.EventHandler(this.export_excel_Click);
             // 
-            // button3
+            // btnImport_word
             // 
-            this.button3.Location = new System.Drawing.Point(123, 481);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(104, 30);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "Импорт SQL";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnImport_word.Location = new System.Drawing.Point(123, 481);
+            this.btnImport_word.Name = "btnImport_word";
+            this.btnImport_word.Size = new System.Drawing.Size(104, 30);
+            this.btnImport_word.TabIndex = 3;
+            this.btnImport_word.Text = "Импорт Word";
+            this.btnImport_word.UseVisualStyleBackColor = true;
+            this.btnImport_word.Click += new System.EventHandler(this.btnImport_word_Click);
             // 
             // import_excel
             // 
@@ -277,14 +258,12 @@ namespace System_College_of_Communication.students
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textSearch;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btneksport_word;
         private System.Windows.Forms.Button export_excel;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnImport_word;
         private System.Windows.Forms.Button import_excel;
         private System.Windows.Forms.DataGridView dataGridView;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Button btnNew;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
