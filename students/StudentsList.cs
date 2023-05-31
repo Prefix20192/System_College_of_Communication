@@ -72,7 +72,6 @@ namespace System_College_of_Communication.students
             if(e.ColumnIndex == 1)
             {
                 //Edit
-                std_upd.Clear();
                 std_upd.id = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
                 std_upd.UpdateInfo();
                 std_upd.ShowDialog();

@@ -31,20 +31,6 @@ namespace System_College_of_Communication.students
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(StudentsUpdate));
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.файлToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортExeclToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.импортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.имяпортToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.импротToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.acessToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.импортToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.tXTToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.импортToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
-            this.экспортToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.btnNewlable_and_btn = new System.Windows.Forms.Button();
             this.label19 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
@@ -86,7 +72,6 @@ namespace System_College_of_Communication.students
             this.txtgroup_stud = new System.Windows.Forms.TextBox();
             this.lable = new System.Windows.Forms.Label();
             this.txtFio_stud = new System.Windows.Forms.TextBox();
-            this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,112 +84,6 @@ namespace System_College_of_Communication.students
             this.btnUpdate.Text = "Обновить";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.файлToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(851, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // файлToolStripMenuItem
-            // 
-            this.файлToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.экспортExeclToolStripMenuItem,
-            this.имяпортToolStripMenuItem,
-            this.acessToolStripMenuItem,
-            this.tXTToolStripMenuItem});
-            this.файлToolStripMenuItem.Name = "файлToolStripMenuItem";
-            this.файлToolStripMenuItem.Size = new System.Drawing.Size(70, 20);
-            this.файлToolStripMenuItem.Text = "Действие";
-            // 
-            // экспортExeclToolStripMenuItem
-            // 
-            this.экспортExeclToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.импортToolStripMenuItem,
-            this.экспортToolStripMenuItem});
-            this.экспортExeclToolStripMenuItem.Name = "экспортExeclToolStripMenuItem";
-            this.экспортExeclToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.экспортExeclToolStripMenuItem.Text = "Execl";
-            // 
-            // импортToolStripMenuItem
-            // 
-            this.импортToolStripMenuItem.Name = "импортToolStripMenuItem";
-            this.импортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.импортToolStripMenuItem.Text = "Импорт";
-            this.импортToolStripMenuItem.Click += new System.EventHandler(this.импортToolStripMenuItem_Click);
-            // 
-            // экспортToolStripMenuItem
-            // 
-            this.экспортToolStripMenuItem.Name = "экспортToolStripMenuItem";
-            this.экспортToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.экспортToolStripMenuItem.Text = "Экспорт";
-            // 
-            // имяпортToolStripMenuItem
-            // 
-            this.имяпортToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.импротToolStripMenuItem,
-            this.экспортToolStripMenuItem1});
-            this.имяпортToolStripMenuItem.Name = "имяпортToolStripMenuItem";
-            this.имяпортToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.имяпортToolStripMenuItem.Text = "Word";
-            // 
-            // импротToolStripMenuItem
-            // 
-            this.импротToolStripMenuItem.Name = "импротToolStripMenuItem";
-            this.импротToolStripMenuItem.Size = new System.Drawing.Size(119, 22);
-            this.импротToolStripMenuItem.Text = "Импрот";
-            // 
-            // экспортToolStripMenuItem1
-            // 
-            this.экспортToolStripMenuItem1.Name = "экспортToolStripMenuItem1";
-            this.экспортToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
-            this.экспортToolStripMenuItem1.Text = "Экспорт";
-            // 
-            // acessToolStripMenuItem
-            // 
-            this.acessToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.импортToolStripMenuItem1,
-            this.экспортToolStripMenuItem2});
-            this.acessToolStripMenuItem.Name = "acessToolStripMenuItem";
-            this.acessToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.acessToolStripMenuItem.Text = "Access";
-            // 
-            // импортToolStripMenuItem1
-            // 
-            this.импортToolStripMenuItem1.Name = "импортToolStripMenuItem1";
-            this.импортToolStripMenuItem1.Size = new System.Drawing.Size(119, 22);
-            this.импортToolStripMenuItem1.Text = "Импорт";
-            // 
-            // экспортToolStripMenuItem2
-            // 
-            this.экспортToolStripMenuItem2.Name = "экспортToolStripMenuItem2";
-            this.экспортToolStripMenuItem2.Size = new System.Drawing.Size(119, 22);
-            this.экспортToolStripMenuItem2.Text = "Экспорт";
-            // 
-            // tXTToolStripMenuItem
-            // 
-            this.tXTToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.импортToolStripMenuItem2,
-            this.экспортToolStripMenuItem3});
-            this.tXTToolStripMenuItem.Name = "tXTToolStripMenuItem";
-            this.tXTToolStripMenuItem.Size = new System.Drawing.Size(110, 22);
-            this.tXTToolStripMenuItem.Text = "TXT";
-            // 
-            // импортToolStripMenuItem2
-            // 
-            this.импортToolStripMenuItem2.Name = "импортToolStripMenuItem2";
-            this.импортToolStripMenuItem2.Size = new System.Drawing.Size(119, 22);
-            this.импортToolStripMenuItem2.Text = "Импорт";
-            // 
-            // экспортToolStripMenuItem3
-            // 
-            this.экспортToolStripMenuItem3.Name = "экспортToolStripMenuItem3";
-            this.экспортToolStripMenuItem3.Size = new System.Drawing.Size(119, 22);
-            this.экспортToolStripMenuItem3.Text = "Экспорт";
             // 
             // btnNewlable_and_btn
             // 
@@ -279,9 +158,9 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.txtgroup_stud);
             this.panel1.Controls.Add(this.lable);
             this.panel1.Controls.Add(this.txtFio_stud);
-            this.panel1.Location = new System.Drawing.Point(0, 27);
+            this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(851, 322);
+            this.panel1.Size = new System.Drawing.Size(853, 348);
             this.panel1.TabIndex = 41;
             // 
             // label21
@@ -587,40 +466,21 @@ namespace System_College_of_Communication.students
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(851, 350);
+            this.ClientSize = new System.Drawing.Size(851, 332);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "StudentsUpdate";
             this.Text = "Редактировать студента";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem файлToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem экспортExeclToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem имяпортToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem импортToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem acessToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tXTToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem импротToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem импортToolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem импортToolStripMenuItem2;
-        private System.Windows.Forms.ToolStripMenuItem экспортToolStripMenuItem3;
         private System.Windows.Forms.Button btnNewlable_and_btn;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;

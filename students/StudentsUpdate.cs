@@ -67,11 +67,5 @@ namespace System_College_of_Communication.students
             Database.DbStudent.UpdateStudent(std_info, id);
             _parent.Display();
         }
-
-        private void импортToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
     }
 }
