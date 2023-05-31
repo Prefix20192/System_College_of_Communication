@@ -97,7 +97,7 @@ namespace System_College_of_Communication
             this.panel1.Controls.Add(this.open_view_doc);
             this.panel1.Location = new System.Drawing.Point(3, -1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(786, 377);
+            this.panel1.Size = new System.Drawing.Size(828, 389);
             this.panel1.TabIndex = 5;
             // 
             // main_form

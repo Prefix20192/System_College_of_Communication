@@ -113,6 +113,7 @@
     <Compile Include="Cool_Hour\Col_Hours.Designer.cs">
       <DependentUpon>Col_Hours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Database\DbSchedule.cs" />
     <Compile Include="Database\DbStudent.cs" />
     <Compile Include="Documents\Doc.cs">
       <SubType>Form</SubType>
@@ -128,6 +129,13 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Schedule\add_schedule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Schedule\add_schedule.Designer.cs">
+      <DependentUpon>add_schedule.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Schedule\parametrs_schedule.cs" />
     <Compile Include="Schedule\Schedule.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,6 +200,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Schedule\add_schedule.resx">
+      <DependentUpon>add_schedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Schedule\Schedule.resx">
       <DependentUpon>Schedule.cs</DependentUpon>
     </EmbeddedResource>
