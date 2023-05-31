@@ -31,17 +31,16 @@ namespace System_College_of_Communication.Documents
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Doc));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.btnSaveFile = new System.Windows.Forms.Button();
             this.txtBrowse = new System.Windows.Forms.TextBox();
+            this.btnSaveFile = new System.Windows.Forms.Button();
+            this.dataGridView = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.path = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel1.SuspendLayout();
@@ -58,6 +57,24 @@ namespace System_College_of_Communication.Documents
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1072, 593);
             this.panel1.TabIndex = 1;
+            // 
+            // txtBrowse
+            // 
+            this.txtBrowse.Location = new System.Drawing.Point(117, 567);
+            this.txtBrowse.Name = "txtBrowse";
+            this.txtBrowse.ReadOnly = true;
+            this.txtBrowse.Size = new System.Drawing.Size(371, 20);
+            this.txtBrowse.TabIndex = 2;
+            // 
+            // btnSaveFile
+            // 
+            this.btnSaveFile.Location = new System.Drawing.Point(3, 565);
+            this.btnSaveFile.Name = "btnSaveFile";
+            this.btnSaveFile.Size = new System.Drawing.Size(107, 23);
+            this.btnSaveFile.TabIndex = 1;
+            this.btnSaveFile.Text = "&Загрузить файл";
+            this.btnSaveFile.UseVisualStyleBackColor = true;
+            this.btnSaveFile.Click += new System.EventHandler(this.btnSaveFile_Click);
             // 
             // dataGridView
             // 
@@ -77,33 +94,20 @@ namespace System_College_of_Communication.Documents
             this.Column2,
             this.Column3,
             this.Column4,
-            this.Column5,
+            this.path,
             this.Column6,
             this.Column7});
             this.dataGridView.GridColor = System.Drawing.Color.DimGray;
             this.dataGridView.Location = new System.Drawing.Point(0, 0);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
+            this.dataGridView.ShowCellErrors = false;
+            this.dataGridView.ShowCellToolTips = false;
+            this.dataGridView.ShowEditingIcon = false;
+            this.dataGridView.ShowRowErrors = false;
             this.dataGridView.Size = new System.Drawing.Size(1072, 559);
             this.dataGridView.TabIndex = 0;
             this.dataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
-            // 
-            // btnSaveFile
-            // 
-            this.btnSaveFile.Location = new System.Drawing.Point(3, 565);
-            this.btnSaveFile.Name = "btnSaveFile";
-            this.btnSaveFile.Size = new System.Drawing.Size(107, 23);
-            this.btnSaveFile.TabIndex = 1;
-            this.btnSaveFile.Text = "&Загрузить файл";
-            this.btnSaveFile.UseVisualStyleBackColor = true;
-            // 
-            // txtBrowse
-            // 
-            this.txtBrowse.Location = new System.Drawing.Point(117, 567);
-            this.txtBrowse.Name = "txtBrowse";
-            this.txtBrowse.ReadOnly = true;
-            this.txtBrowse.Size = new System.Drawing.Size(371, 20);
-            this.txtBrowse.TabIndex = 2;
             // 
             // Column1
             // 
@@ -133,43 +137,35 @@ namespace System_College_of_Communication.Documents
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
-            // Column5
+            // path
+            // 
+            this.path.DataPropertyName = "path";
+            this.path.HeaderText = "Путь до файла";
+            this.path.Name = "path";
+            this.path.ReadOnly = true;
+            // 
+            // Column6
             // 
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.Lime;
             dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.Lime;
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Column5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column5.HeaderText = "";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Text = "Скачать";
-            this.Column5.UseColumnTextForButtonValue = true;
-            // 
-            // Column6
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle1;
             this.Column6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column6.HeaderText = "";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
-            this.Column6.Text = "Редактировать";
+            this.Column6.Text = "Скачать";
             this.Column6.UseColumnTextForButtonValue = true;
             // 
             // Column7
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Red;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column7.HeaderText = "";
             this.Column7.Name = "Column7";
@@ -205,7 +201,7 @@ namespace System_College_of_Communication.Documents
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewButtonColumn Column5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn path;
         private System.Windows.Forms.DataGridViewButtonColumn Column6;
         private System.Windows.Forms.DataGridViewButtonColumn Column7;
     }

@@ -9,13 +9,13 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 using System.Configuration;
-
+using System.IO;
+using System.Diagnostics;
 
 namespace System_College_of_Communication.Documents
 {
     public partial class Doc : Form
     {
-
         private SqlConnection sqlConnection = null;
         public Doc()
         {
@@ -30,7 +30,7 @@ namespace System_College_of_Communication.Documents
 
         public void Display()
         {
-            Database.DbStudent.DisplayAndSearch("SELECT id,filename,categories,date FROM Documents", dataGridView);
+            Database.DbStudent.DisplayAndSearch("SELECT id,filename,categories,date,path FROM Documents", dataGridView);
         }
 
         private void Doc_Shown(object sender, EventArgs e)
@@ -38,12 +38,10 @@ namespace System_College_of_Communication.Documents
             Display();
         }
 
-        public void DeleteStudent(string id)
+        public void DeleteDoc(string id)
         {
             string sql = "DELETE FROM Documents WHERE id = @Docid";
             SqlCommand cmd = new SqlCommand(sql, sqlConnection);
-            cmd.CommandType = CommandType.Text;
-
             cmd.Parameters.AddWithValue("@Docid", id);
 
             try
@@ -64,23 +62,74 @@ namespace System_College_of_Communication.Documents
             if (e.ColumnIndex == 0)
             {
                 //download
-                MessageBox.Show("Скачать");
+                // MessageBox.Show("Скачать");
+                DownloadFileFromDatabase(dataGridView);
                 return;
             }
             if (e.ColumnIndex == 1)
             {
-                //Edit
-                MessageBox.Show("Редактировать");
-            }
-            if (e.ColumnIndex == 2)
-            {
 
                 if (MessageBox.Show("Вы действительно хотите удалить?", "information", MessageBoxButtons.YesNo, MessageBoxIcon.Information) == DialogResult.Yes)
                 {
-                    DeleteStudent(dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString());
+                    DeleteDoc(dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString());
                     Display();
                 }
                 return;
+            }
+        }
+
+        private void UploadFileToDatabase(string filePath)
+        {
+            byte[] fileContent = File.ReadAllBytes(filePath);
+            string fileName = Path.GetFileNameWithoutExtension(filePath);
+            string fileType = Path.GetExtension(filePath);
+
+            SqlCommand databaseCommand = new SqlCommand("INSERT INTO Documents (filename, filetype, filecontent, path, date) VALUES (@filename, @filetype, @filecontent, @path, @date)", sqlConnection);
+            databaseCommand.Parameters.AddWithValue("@filename", fileName);
+            databaseCommand.Parameters.AddWithValue("@filetype", fileType);
+            databaseCommand.Parameters.AddWithValue("@filecontent", fileContent);
+            databaseCommand.Parameters.AddWithValue("@path", filePath);
+            databaseCommand.Parameters.AddWithValue("@date", DateTime.Now);
+            
+            databaseCommand.ExecuteNonQuery();
+
+            // Сохранить файл в папке с проектом
+            string projectDirectory = Path.GetDirectoryName(Application.ExecutablePath) + @"\Personal_documents";
+            string saveFilePath = Path.Combine(projectDirectory, fileName + fileType);
+            File.WriteAllBytes(saveFilePath, fileContent);
+            Display();
+        }
+
+        private void DownloadFileFromDatabase(DataGridView dataGridView)
+        {
+            // Получить значение ячейки с путем к файлу
+            int rowIndex = dataGridView.CurrentCell.RowIndex;
+            string filePath = dataGridView.Rows[rowIndex].Cells["path"].Value.ToString();
+
+            // Считать содержимое файла из указанного пути
+            byte[] fileContent = File.ReadAllBytes(filePath);
+
+            // Показать диалог сохранения для сохранения файла на диск
+            using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+            {
+                saveFileDialog.FileName = Path.GetFileName(filePath);
+                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    File.WriteAllBytes(saveFileDialog.FileName, fileContent);
+                    MessageBox.Show("Файл успешно сохранен.");
+                }
+            }
+        }
+
+        private void btnSaveFile_Click(object sender, EventArgs e)
+        {
+            //MessageBox.Show(Path.GetDirectoryName(Application.ExecutablePath) + @"\Personal_documents");
+            using (OpenFileDialog openFileDialog = new OpenFileDialog() { Filter = "Все файлы (*.*)|*.*" })
+            {
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    UploadFileToDatabase(openFileDialog.FileName);
+                }
             }
         }
     }
