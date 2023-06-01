@@ -113,6 +113,12 @@
     <Compile Include="Cool_Hour\Col_Hours.Designer.cs">
       <DependentUpon>Col_Hours.cs</DependentUpon>
     </Compile>
+    <Compile Include="Cool_Hour\txt_topic.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cool_Hour\txt_topic.Designer.cs">
+      <DependentUpon>txt_topic.cs</DependentUpon>
+    </Compile>
     <Compile Include="Database\DbSchedule.cs" />
     <Compile Include="Database\DbStudent.cs" />
     <Compile Include="Documents\Doc.cs">
@@ -184,6 +190,9 @@
     <EmbeddedResource Include="Cool_Hour\Col_Hours.resx">
       <DependentUpon>Col_Hours.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Cool_Hour\txt_topic.resx">
+      <DependentUpon>txt_topic.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Documents\Doc.resx">
       <DependentUpon>Doc.cs</DependentUpon>
     </EmbeddedResource>
@@ -241,8 +250,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Cool_Hour\files\" />
     <Folder Include="Documents\files\" />
-    <Folder Include="Other\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
