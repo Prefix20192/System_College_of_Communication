@@ -84,19 +84,19 @@ namespace System_College_of_Communication.Documents
             string fileName = Path.GetFileNameWithoutExtension(filePath);
             string fileType = Path.GetExtension(filePath);
 
-            SqlCommand databaseCommand = new SqlCommand("INSERT INTO Documents (filename, filetype, filecontent, path, date) VALUES (@filename, @filetype, @filecontent, @path, @date)", sqlConnection);
-            databaseCommand.Parameters.AddWithValue("@filename", fileName);
-            databaseCommand.Parameters.AddWithValue("@filetype", fileType);
-            databaseCommand.Parameters.AddWithValue("@filecontent", fileContent);
-            databaseCommand.Parameters.AddWithValue("@path", filePath);
-            databaseCommand.Parameters.AddWithValue("@date", DateTime.Now);
-            
-            databaseCommand.ExecuteNonQuery();
-
             // Сохранить файл в папке с проектом
             string projectDirectory = Path.GetDirectoryName(Application.ExecutablePath) + @"\Personal_documents";
             string saveFilePath = Path.Combine(projectDirectory, fileName + fileType);
             File.WriteAllBytes(saveFilePath, fileContent);
+
+            SqlCommand databaseCommand = new SqlCommand("INSERT INTO Documents (filename, filetype, filecontent, path, date) VALUES (@filename, @filetype, @filecontent, @path, @date)", sqlConnection);
+            databaseCommand.Parameters.AddWithValue("@filename", fileName);
+            databaseCommand.Parameters.AddWithValue("@filetype", fileType);
+            databaseCommand.Parameters.AddWithValue("@filecontent", fileContent);
+            databaseCommand.Parameters.AddWithValue("@path", saveFilePath);
+            databaseCommand.Parameters.AddWithValue("@date", DateTime.Now);
+            
+            databaseCommand.ExecuteNonQuery();
             Display();
         }
 
