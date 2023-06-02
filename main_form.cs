@@ -1,20 +1,44 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
+using System.Configuration;
+using System.Drawing;
+using System.Windows.Forms.DataVisualization.Charting;
+using System.Data;
 
 namespace System_College_of_Communication
 {
     public partial class main_form : Form
     {
+        private SqlConnection sqlConnection = null;
+
         public main_form()
         {
             InitializeComponent();
+        }
+
+        void FillChart()
+        {
+            sqlConnection = new SqlConnection(ConfigurationManager.ConnectionStrings["base_main"].ConnectionString);
+            DataTable dt = new DataTable();
+            sqlConnection.Open();
+            SqlDataAdapter dp = new SqlDataAdapter("SELECT COUNT(*) as Total, g_stud FROM Students GROUP BY g_stud", sqlConnection);
+            dp.Fill(dt);
+            chart1.DataSource = dt;
+            sqlConnection.Close();
+
+            chart1.Series["Students"].Label = "#PERCENT{P}"; //Отображать значения Y в процентах
+            chart1.Series["Students"].LegendText = "#VALX"; //В легенде отображать значения по X
+
+
+            chart1.Series["Students"].XValueMember = "g_stud";
+            chart1.Series["Students"].YValueMembers = "Total";
+            chart1.Titles.Add("Количество студентов в группах");
+        }
+
+        private void main_form_Load(object sender, EventArgs e)
+        {
+            FillChart();
         }
 
         private void open_student_table_Click(object sender, EventArgs e)
