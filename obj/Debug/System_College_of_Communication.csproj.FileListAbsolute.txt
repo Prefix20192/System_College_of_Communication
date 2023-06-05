@@ -39,3 +39,4 @@ C:\Users\Admin\Documents\project_vs\System_College_of_Communication\bin\Debug\Z.
 C:\Users\Admin\Documents\project_vs\System_College_of_Communication\obj\Debug\System_College_of_Communication.students.Import_students_word.resources
 C:\Users\Admin\Documents\project_vs\System_College_of_Communication\obj\Debug\System_College_of_Communication.Schedule.add_schedule.resources
 C:\Users\Admin\Documents\project_vs\System_College_of_Communication\obj\Debug\System_College_of_Communication.Cool_Hour.txt_topic.resources
+C:\Users\Admin\Documents\project_vs\System_College_of_Communication\obj\Debug\System_College_of_Communication.csproj.AssemblyReference.cache

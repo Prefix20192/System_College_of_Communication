@@ -90,14 +90,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System_College_of_Communication.exe" size="1011168">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System_College_of_Communication.exe" size="1013216">
       <assemblyIdentity name="System_College_of_Communication" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>JsFyPCpyoGUxMf3OYsOxcQeDrq7O0exiFsPHNhyMsTo=</dsig:DigestValue>
+        <dsig:DigestValue>Bh3wp2pobc0+uxpECabgMBxQBJq9MfJMYJoqs6vRG0I=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -119,7 +119,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>/cX5099B+mq1VS952QMxXQgl2oTnHsLaZxxoXQMeabs=</dsig:DigestValue>
+      <dsig:DigestValue>t+Qm1XVNnNm3aLM+Q5Qo4emplOSO3FZh43mBD/GdC2Q=</dsig:DigestValue>
     </hash>
   </file>
   <file name="Database\Database_log.ldf" size="8388608" writeableType="applicationData">
@@ -128,7 +128,7 @@
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>X4oiqRfJDeWnCTxukoPGzAVJ3s2ijmBqUiexewRZ1lI=</dsig:DigestValue>
+      <dsig:DigestValue>UBBDcBqwKctcsAzOKVLoCeriBQBL5XKi36lRjpnuiWk=</dsig:DigestValue>
     </hash>
   </file>
   <file name="System_College_of_Communication.exe.config" size="1163">

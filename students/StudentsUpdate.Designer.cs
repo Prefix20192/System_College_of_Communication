@@ -160,7 +160,7 @@ namespace System_College_of_Communication.students
             this.panel1.Controls.Add(this.txtFio_stud);
             this.panel1.Location = new System.Drawing.Point(2, 1);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(853, 348);
+            this.panel1.Size = new System.Drawing.Size(853, 327);
             this.panel1.TabIndex = 41;
             // 
             // label21
@@ -472,6 +472,7 @@ namespace System_College_of_Communication.students
             this.MaximizeBox = false;
             this.Name = "StudentsUpdate";
             this.Text = "Редактировать студента";
+            this.Load += new System.EventHandler(this.StudentsUpdate_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

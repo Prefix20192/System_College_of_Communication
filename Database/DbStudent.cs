@@ -59,7 +59,7 @@ namespace System_College_of_Communication.Database
             if (reader.HasRows)
             {
                 string sql = "UPDATE Students SET fio_stud = @StudentFio, g_stud = @StudentGroup WHERE id = @Studentid;" +
-                        "UPDATE Student_info SET birthday = @StudBirthday, phone = @StudPhone, passport = @passport, education = @StudEducation, address_in_stav = @StudAddress_In_Stav, propiska = @StudPropiska, family_status = @StudFamilyStatus, Accounting_of_ODN = @StudODN, Fio_mam = @Fio_mam, fio_pap = @fio_pap, phone_mam = @PhoneMam, phone_pap = @Phone_pap, address_family = @AddresFamily, nationalnost = @Notional WHERE stud_id = @Studentid";
+                        "UPDATE Student_info SET birthday = @StudBirthday, phone = @StudPhone, pasport = @passport, education = @StudEducation, address_in_stav = @StudAddress_In_Stav, propiska = @StudPropiska, family_status = @StudFamilyStatus, Accounting_of_ODN = @StudODN, Fio_mam = @Fio_mam, fio_pap = @fio_pap, phone_mam = @PhoneMam, phone_pap = @Phone_pap, address_family = @AddresFamily, nationalnost = @Notional WHERE stud_id = @Studentid";
                 SqlCommand cmd = new SqlCommand(sql, con);
                 cmd.CommandType = CommandType.Text;
 
