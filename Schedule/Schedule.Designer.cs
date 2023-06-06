@@ -40,8 +40,9 @@ namespace System_College_of_Communication.Schedule
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.Column9 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             this.SuspendLayout();
             // 
@@ -59,8 +60,9 @@ namespace System_College_of_Communication.Schedule
             this.Column5,
             this.Column6,
             this.Column7,
-            this.Column8});
-            this.dataGridView.Location = new System.Drawing.Point(1, -1);
+            this.Column8,
+            this.Column9});
+            this.dataGridView.Location = new System.Drawing.Point(2, -1);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
             this.dataGridView.RowHeadersWidth = 51;
@@ -103,69 +105,68 @@ namespace System_College_of_Communication.Schedule
             // 
             // Column1
             // 
-            this.Column1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.Column1.DataPropertyName = "id";
-            this.Column1.HeaderText = "№";
+            this.Column1.HeaderText = "#";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
             // Column2
             // 
-            this.Column2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column2.DataPropertyName = "predmet";
-            this.Column2.HeaderText = "Предмет";
+            this.Column2.DataPropertyName = "day_week";
+            this.Column2.HeaderText = "День недели";
             this.Column2.Name = "Column2";
             this.Column2.ReadOnly = true;
             // 
             // Column3
             // 
-            this.Column3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column3.DataPropertyName = "g_name";
-            this.Column3.HeaderText = "Группа";
+            this.Column3.DataPropertyName = "predmet";
+            this.Column3.HeaderText = "Предмет";
             this.Column3.Name = "Column3";
             this.Column3.ReadOnly = true;
             // 
             // Column4
             // 
-            this.Column4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column4.DataPropertyName = "auditori";
-            this.Column4.HeaderText = "Аудитория / Кабинет";
+            this.Column4.DataPropertyName = "g_name";
+            this.Column4.HeaderText = "Группа";
             this.Column4.Name = "Column4";
             this.Column4.ReadOnly = true;
             // 
             // Column5
             // 
-            this.Column5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column5.DataPropertyName = "time_work";
-            this.Column5.HeaderText = "Рабочее время";
+            this.Column5.DataPropertyName = "prepod";
+            this.Column5.HeaderText = "Преподаватель";
             this.Column5.Name = "Column5";
             this.Column5.ReadOnly = true;
             // 
             // Column6
             // 
-            this.Column6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Column6.DataPropertyName = "prepod";
-            this.Column6.HeaderText = "Преподаватель";
+            this.Column6.DataPropertyName = "auditori";
+            this.Column6.HeaderText = "Аудитория/Кабинет";
             this.Column6.Name = "Column6";
             this.Column6.ReadOnly = true;
             // 
             // Column7
             // 
-            this.Column7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Column7.HeaderText = "";
+            this.Column7.DataPropertyName = "time_work";
+            this.Column7.HeaderText = "Количество времени на весь предмет";
             this.Column7.Name = "Column7";
             this.Column7.ReadOnly = true;
-            this.Column7.Text = "Редактировать";
-            this.Column7.UseColumnTextForButtonValue = true;
             // 
             // Column8
             // 
-            this.Column8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Column8.HeaderText = "";
             this.Column8.Name = "Column8";
             this.Column8.ReadOnly = true;
-            this.Column8.Text = "Удалить";
+            this.Column8.Text = "Править";
             this.Column8.UseColumnTextForButtonValue = true;
+            // 
+            // Column9
+            // 
+            this.Column9.HeaderText = "";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            this.Column9.Text = "Удалить";
+            this.Column9.UseColumnTextForButtonValue = true;
             // 
             // Schedule
             // 
@@ -200,7 +201,8 @@ namespace System_College_of_Communication.Schedule
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewButtonColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
         private System.Windows.Forms.DataGridViewButtonColumn Column8;
+        private System.Windows.Forms.DataGridViewButtonColumn Column9;
     }
 }

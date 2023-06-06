@@ -30,7 +30,7 @@ namespace System_College_of_Communication.Database
 
         public static void AddSchedule(Schedule.parametrs_schedule sch)
         {
-            string sql = "INSERT INTO schedule (g_name, predmet, auditori, time_work, prepod) VALUES (@g_name, @predmet, @auditori, @time_work, @prepod)";
+            string sql = "INSERT INTO schedule (g_name, predmet, auditori, time_work, prepod, day_week) VALUES (@g_name, @predmet, @auditori, @time_work, @prepod, @day_week)";
             SqlConnection con = GetConnection();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -40,6 +40,7 @@ namespace System_College_of_Communication.Database
             cmd.Parameters.AddWithValue("@auditori", sch.auditori);
             cmd.Parameters.AddWithValue("@time_work", sch.time_work);
             cmd.Parameters.AddWithValue("@prepod", sch.prepod);
+            cmd.Parameters.AddWithValue("@day_week", sch.Day_week);
 
             try
             {
@@ -55,7 +56,7 @@ namespace System_College_of_Communication.Database
         }
         public static void UpdateSchedule(Schedule.parametrs_schedule sch, string id)
         {
-            string sql = "UPDATE schedule SET g_name = @g_name, predmet = @predmet, auditori = @auditor, time_work = @time, prepod = @prepod WHERE id = @ScheduleID";
+            string sql = "UPDATE schedule SET g_name = @g_name, predmet = @predmet, auditori = @auditor, time_work = @time, prepod = @prepod, day_week = @day_week WHERE id = @ScheduleID";
             SqlConnection con = GetConnection();
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.CommandType = CommandType.Text;
@@ -66,6 +67,7 @@ namespace System_College_of_Communication.Database
             cmd.Parameters.AddWithValue("@auditor", sch.auditori);
             cmd.Parameters.AddWithValue("@time", sch.time_work);
             cmd.Parameters.AddWithValue("@prepod", sch.prepod);
+            cmd.Parameters.AddWithValue("@day_week", sch.Day_week);
 
             try
             {

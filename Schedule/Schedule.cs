@@ -30,7 +30,7 @@ namespace System_College_of_Communication.Schedule
 
         public void Display()
         {
-            Database.DbSchedule.DisplayAndSearch("SELECT id, predmet, g_name, auditori, prepod, time_work FROM schedule", dataGridView);
+            Database.DbSchedule.DisplayAndSearch("SELECT id, day_week, predmet, g_name, prepod, auditori, time_work FROM schedule", dataGridView);
         }
 
         private void Schedule_Shown(object sender, EventArgs e)
@@ -40,7 +40,7 @@ namespace System_College_of_Communication.Schedule
 
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
-            Database.DbSchedule.DisplayAndSearch("SELECT id, predmet, g_name, auditori, prepod, time_work FROM schedule WHERE predmet LIKE'%"+ txtSearch.Text+ "%'", dataGridView);
+            Database.DbSchedule.DisplayAndSearch("SELECT id, day_week, predmet, g_name, prepod, auditori, time_work FROM schedule WHERE predmet LIKE'%" + txtSearch.Text+ "%'", dataGridView);
         }
 
         private void txtSearch_Leave(object sender, EventArgs e)
@@ -65,15 +65,18 @@ namespace System_College_of_Communication.Schedule
         {
             if (e.ColumnIndex == 0)
             {
+                add_sch.Clear();
                 add_sch.id = dataGridView.Rows[e.RowIndex].Cells[2].Value.ToString();
-                add_sch.g_name = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
+                add_sch.day_week = dataGridView.Rows[e.RowIndex].Cells[3].Value.ToString();
                 add_sch.predmet = dataGridView.Rows[e.RowIndex].Cells[4].Value.ToString();
-                add_sch.auditori = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
-                add_sch.time_work = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
-                add_sch.prepod = dataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
+                add_sch.g_name = dataGridView.Rows[e.RowIndex].Cells[5].Value.ToString();
+                add_sch.prepod = dataGridView.Rows[e.RowIndex].Cells[6].Value.ToString();
+                add_sch.auditori = dataGridView.Rows[e.RowIndex].Cells[7].Value.ToString();
+                add_sch.time_work = dataGridView.Rows[e.RowIndex].Cells[8].Value.ToString();
 
                 add_sch.Update_Schedule();
                 add_sch.ShowDialog();
+                return;
             }
             if (e.ColumnIndex == 1)
             {
@@ -88,7 +91,8 @@ namespace System_College_of_Communication.Schedule
 
         private void button3_Click(object sender, EventArgs e)
         {
-            add_sch.ShowDialog();
+            add_schedule add_cs = new add_schedule(this);
+            add_cs.Show();
         }
     }
 }

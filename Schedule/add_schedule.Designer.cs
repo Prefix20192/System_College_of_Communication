@@ -44,6 +44,8 @@ namespace System_College_of_Communication.Schedule
             this.txtFioPrepod = new System.Windows.Forms.TextBox();
             this.txtGroup = new System.Windows.Forms.TextBox();
             this.txtPredmet = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.txtDay_week = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -71,6 +73,8 @@ namespace System_College_of_Communication.Schedule
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.txtDay_week);
             this.panel2.Controls.Add(this.btnSave);
             this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.label4);
@@ -119,7 +123,7 @@ namespace System_College_of_Communication.Schedule
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(230, 99);
+            this.label3.Location = new System.Drawing.Point(237, 71);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 13);
             this.label3.TabIndex = 7;
@@ -128,7 +132,7 @@ namespace System_College_of_Communication.Schedule
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(249, 73);
+            this.label2.Location = new System.Drawing.Point(256, 45);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(97, 13);
             this.label2.TabIndex = 6;
@@ -137,7 +141,7 @@ namespace System_College_of_Communication.Schedule
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(237, 47);
+            this.label1.Location = new System.Drawing.Point(244, 19);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(109, 13);
             this.label1.TabIndex = 5;
@@ -159,24 +163,40 @@ namespace System_College_of_Communication.Schedule
             // 
             // txtFioPrepod
             // 
-            this.txtFioPrepod.Location = new System.Drawing.Point(352, 96);
+            this.txtFioPrepod.Location = new System.Drawing.Point(352, 68);
             this.txtFioPrepod.Name = "txtFioPrepod";
             this.txtFioPrepod.Size = new System.Drawing.Size(212, 20);
             this.txtFioPrepod.TabIndex = 2;
             // 
             // txtGroup
             // 
-            this.txtGroup.Location = new System.Drawing.Point(352, 70);
+            this.txtGroup.Location = new System.Drawing.Point(352, 42);
             this.txtGroup.Name = "txtGroup";
             this.txtGroup.Size = new System.Drawing.Size(212, 20);
             this.txtGroup.TabIndex = 1;
             // 
             // txtPredmet
             // 
-            this.txtPredmet.Location = new System.Drawing.Point(352, 44);
+            this.txtPredmet.Location = new System.Drawing.Point(352, 16);
             this.txtPredmet.Name = "txtPredmet";
             this.txtPredmet.Size = new System.Drawing.Size(212, 20);
             this.txtPredmet.TabIndex = 0;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(273, 99);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(73, 13);
+            this.label7.TabIndex = 12;
+            this.label7.Text = "День недели";
+            // 
+            // txtDay_week
+            // 
+            this.txtDay_week.Location = new System.Drawing.Point(352, 96);
+            this.txtDay_week.Name = "txtDay_week";
+            this.txtDay_week.Size = new System.Drawing.Size(212, 20);
+            this.txtDay_week.TabIndex = 11;
             // 
             // add_schedule
             // 
@@ -214,5 +234,7 @@ namespace System_College_of_Communication.Schedule
         private System.Windows.Forms.TextBox txttimework;
         private System.Windows.Forms.TextBox txtFioPrepod;
         private System.Windows.Forms.TextBox txtGroup;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtDay_week;
     }
 }

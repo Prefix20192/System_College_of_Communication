@@ -14,7 +14,7 @@ namespace System_College_of_Communication.Schedule
     {
 
         private readonly Schedule _parent;
-        public string id, g_name, predmet, auditori, time_work, prepod;
+        public string id, g_name, predmet, auditori, time_work, prepod, day_week;
 
         public add_schedule(Schedule parent)
         {
@@ -34,6 +34,7 @@ namespace System_College_of_Communication.Schedule
             txtFioPrepod.Text = prepod;
             txttimework.Text = time_work;
             txtauditori.Text = auditori;
+            txtDay_week.Text = day_week;
             label6.Text = "Редактировать рассписание";
             btnSave.Text = "Обновить";
         }
@@ -43,13 +44,13 @@ namespace System_College_of_Communication.Schedule
         {
             if(btnSave.Text == "Добавить")
             {
-                parametrs_schedule schedule = new parametrs_schedule(txtPredmet.Text.Trim(), txtGroup.Text.Trim(), txtFioPrepod.Text.Trim(), txttimework.Text.Trim(), txtauditori.Text.Trim());
+                parametrs_schedule schedule = new parametrs_schedule(txtPredmet.Text.Trim(), txtGroup.Text.Trim(), txtFioPrepod.Text.Trim(), txttimework.Text.Trim(), txtauditori.Text.Trim(), txtDay_week.Text.Trim());
                 Database.DbSchedule.AddSchedule(schedule);
                 _parent.Display();
             }
             if(btnSave.Text == "Обновить")
             {
-                parametrs_schedule schedule = new parametrs_schedule(txtPredmet.Text.Trim(), txtGroup.Text.Trim(), txtFioPrepod.Text.Trim(), txttimework.Text.Trim(), txtauditori.Text.Trim());
+                parametrs_schedule schedule = new parametrs_schedule(txtPredmet.Text.Trim(), txtGroup.Text.Trim(), txtFioPrepod.Text.Trim(), txttimework.Text.Trim(), txtauditori.Text.Trim(), txtDay_week.Text.Trim());
                 Database.DbSchedule.UpdateSchedule(schedule, id);
                 _parent.Display();
             }
